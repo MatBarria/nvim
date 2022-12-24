@@ -77,4 +77,8 @@ return require('packer').startup(function(use)
     -- Use * to select the word in all the file 
     use('nelstrom/vim-visual-star-search')
 
+    -- Open a Terminal
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end}
 end)

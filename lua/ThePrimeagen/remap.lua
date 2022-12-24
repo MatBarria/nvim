@@ -25,13 +25,12 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 -- Replace all the word in the file
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("x", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
---vim.keymap.set("n", "<leader>r", ":%s///g<left><left>")
---vim.keymap.set("n", "<leader>rc", ":%s///gc<left><left>")
----- Same that above bit only in the visually selected range
---vim.keymap.set("x", "<leader>r", ":s///g<left><left>")
---vim.keymap.set("x", "<leader>rc", ":s///gc<left><left>")
--- Replaces a term and press . to replaces the same words
---vim.keymap.set("n", "<silent> s*" ,':let @/="\<".expand("<cword>")."\>"<CR>cgn')
+-- Replace the first instance and then use . to replces de following
+-- use n if you want to skip one instance
+--vim.keymap.set("n", "<silent> s*" ,'vim.g["@/"] = "\<".expand("<cword>")."\>"<CR>cgn')
 --vim.keymap.set("x", "<silent> s*" ,'"sy:let @/=@s<CR>cgn')
 
+-- Change the size of the panel
+vim.keymap.set("n", "<leader>>", "10<C-w>>")
+vim.keymap.set("n", "<leader><", "10<C-w><")
 
