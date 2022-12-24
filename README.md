@@ -3,7 +3,7 @@
 
 ## Requisites
 
-First install neo vim 0.9
+First install neo vim 0.8>
 
 >https://github.com/neovim/neovim/releases/nightly
 
