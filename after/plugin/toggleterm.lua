@@ -22,9 +22,10 @@ function _G.set_terminal_keymaps()
 end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
+--
 
-local Terminal = require("toggleterm.terminal").Terminal
 -- Open a terminal with root
+local Terminal = require("toggleterm.terminal").Terminal
 
 local root = Terminal:new( {cmd = "root", hidden = true, direction = "float"} )
 function _ROOT()

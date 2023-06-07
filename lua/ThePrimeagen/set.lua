@@ -7,6 +7,8 @@ vim.opt.relativenumber = true
 -- Use the same clipboard that out of vim
 vim.opt.clipboard = "unnamedplus"
 
+-- Encoding?
+vim.opt.encoding = "utf-8"
 
 -- Index Size
 vim.opt.tabstop = 4
@@ -33,7 +35,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- line width
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "LightGrey" })
 vim.opt.colorcolumn = "100"
 
 -- Open new windows on the right
 vim.opt.splitright = true
+
