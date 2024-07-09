@@ -50,4 +50,3 @@ vim.opt.colorcolumn = "100"
 
 -- Open new windows on the right
 vim.opt.splitright = true
-

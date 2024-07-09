@@ -6,8 +6,7 @@ vim.g.mapleader = " "
 -- SHORTCUTS
 -- Close
 vim.keymap.set("n", "<leader>q", vim.cmd.q, opts)
-
--- Save 
+-- Save
 vim.keymap.set("n", "<leader>w", vim.cmd.w, opts)
 
 -- add , or ; at the end of the line
@@ -19,16 +18,15 @@ vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 
 -- Paste withoout lossing the clipboard
-vim.keymap.set("x", "<leader>p", "\"_dP", opts)
+vim.keymap.set("x", "<leader>p", '"_dP', opts)
 
 -- Replace all the word in the file
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
-vim.keymap.set("x", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
--- Replace the first instance and then use . to replces de following
+vim.keymap.set("x", "<leader>r", [[:s/\%V<C-r><C-w>/<C-r><C-w>/g<Left><Left>]], opts)
 
+-- Replace the first instance and then use . to replces de following
 -- use n if you want to skip one instance
---vim.keymap.set("n", "<silent> s*" ,'vim.g["@/"] = "\<".expand("<cword>")."\>"<CR>cgn')
---vim.keymap.set("x", "<silent> s*" ,'"sy:let @/=@s<CR>cgn')
+vim.keymap.set("n", "<leader>lr", "*Nciw", opts)
 
 -- Change the size of the panel
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -45,30 +43,3 @@ vim.keymap.set("n", "<C-d>", "<C-d>Znzzzv", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
-
--- Set light colorscheme
-vim.keymap.set("n", "<S-w>", function ()
-    vim.opt.background = "light" -- set this to dark or light
-    vim.cmd('colorscheme gruvbox') 
-end)
--- Set dark colorscheme
-vim.keymap.set("n", "<S-q>", function ()
-    vim.opt.background = "dark" -- set this to dark or light
-   vim.cmd('colorscheme gruvbox') 
-end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
