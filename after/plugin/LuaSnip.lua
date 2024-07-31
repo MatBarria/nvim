@@ -1,4 +1,4 @@
-require("luasnip").config.set_config({ --  w ntSetting LuaSnip config
+require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Enable autotriggered snippets
   enable_autosnippets = true,

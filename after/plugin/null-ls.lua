@@ -4,8 +4,8 @@ if not null_ls_status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
---local code_actions = null_ls.builtins.code_actions
---local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
+local diagnostics = null_ls.builtins.diagnostics
 
 
 local lsp_formatting = function(bufnr)
@@ -40,22 +40,21 @@ null_ls.setup({
         --[[ formatting ]]
         formatting.eslint_d,
         formatting.stylua,
-        formatting.autopep8,
         formatting.clang_format.with({
-      extra_args = {"-style=llvm", "-style={IndentWidth: 4, ColumnLimit: 95}"},
-      --extra_args = {"-style={llvm, IndentWidth: 4, ColumnLimit: 95}"},
-    }),
-    --formatting.clang_format,
+            extra_args = {"-style=llvm", "-style={IndentWidth: 4, ColumnLimit: 80}"},
+        }),
         --formatting.clang_format.with({ 
             --extra_args = { "-style=file:~/.config/nvim/Formater/.clang-format" }, 
             --}),
         formatting.stylelint,
         formatting.prettier,
         formatting.cmake_format,
+        formatting.autopep8,
+        formatting.black,
+        --formatting.autopep8.with({
+            --extra_args = {"-style={max_line_length: 80"},
+        --}),
     },
     on_attach = on_attach,
 
 })
-
-
-

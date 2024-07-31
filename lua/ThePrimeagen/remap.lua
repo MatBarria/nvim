@@ -10,8 +10,9 @@ vim.keymap.set("n", "<leader>q", vim.cmd.q, opts)
 -- Save 
 vim.keymap.set("n", "<leader>w", vim.cmd.w, opts)
 
--- add  ; at the end of the line
+-- add , or ; at the end of the line
 vim.keymap.set("n", "<leader>;", "A;<ESC>", opts)
+vim.keymap.set("n", "<leader>,", "A,<ESC>", opts)
 
 -- Move text up and Down
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
@@ -24,6 +25,7 @@ vim.keymap.set("x", "<leader>p", "\"_dP", opts)
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 vim.keymap.set("x", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 -- Replace the first instance and then use . to replces de following
+
 -- use n if you want to skip one instance
 --vim.keymap.set("n", "<silent> s*" ,'vim.g["@/"] = "\<".expand("<cword>")."\>"<CR>cgn')
 --vim.keymap.set("x", "<silent> s*" ,'"sy:let @/=@s<CR>cgn')
@@ -43,3 +45,30 @@ vim.keymap.set("n", "<C-d>", "<C-d>Znzzzv", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
+
+-- Set light colorscheme
+vim.keymap.set("n", "<S-w>", function ()
+    vim.opt.background = "light" -- set this to dark or light
+    vim.cmd('colorscheme gruvbox') 
+end)
+-- Set dark colorscheme
+vim.keymap.set("n", "<S-q>", function ()
+    vim.opt.background = "dark" -- set this to dark or light
+   vim.cmd('colorscheme gruvbox') 
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

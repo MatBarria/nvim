@@ -1,4 +1,4 @@
---This file can be loaded by calling `lua require('plugins')` from your init.vim
+--This file can be loaded by calling `truelua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -14,17 +14,18 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
+    --use {
+        --"williamboman/mason.nvim",
+        --opts = {
+            --ensure_installed = {
+                --"pyright",
+            --}
+        --},
+    --}
     -- Theme/ColorScheme
-    --use({
-       --'rose-pine/neovim',
-        --as = 'rose-pine',
-        --config = function()
-            --vim.cmd('colorscheme rose-pine')
-        --end
-    --})
-
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "catppuccin/nvim",  as = "catppuccin" }
+    use { "morhetz/gruvbox",  as = "gruvbox" }
+    use {'nyoom-engineering/oxocarbon.nvim'}
 
     -- Highlight 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -55,6 +56,18 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+
+    -- Surround with a simbol
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })  
+
     -- Prettier bottom line
     use {
         'nvim-lualine/lualine.nvim',
@@ -94,7 +107,6 @@ return require('packer').startup(function(use)
 
     -- Git status
     use('tpope/vim-fugitive')
-
 
     -- Move trough different panels
     use('christoomey/vim-tmux-navigator')

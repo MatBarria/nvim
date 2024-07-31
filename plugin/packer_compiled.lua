@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/matias/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/home/matias/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
   harpoon = {
     loaded = true,
     path = "/home/matias/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -179,6 +184,12 @@ _G.packer_plugins = {
     path = "/home/matias/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-surround"] = {
+    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
+    loaded = true,
+    path = "/home/matias/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/matias/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -194,6 +205,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/matias/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/home/matias/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -254,6 +270,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")

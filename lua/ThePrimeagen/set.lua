@@ -29,9 +29,18 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+-- Minimal number of line to keep above o bellow the current line
+vim.opt.scrolloff = 10
+
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+
+-- Set highlight on search but clean it when press esc
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- Case insensitive searching unless /C or one or more letter in search word
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.updatetime = 50
 

@@ -28,7 +28,7 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 local Terminal = require("toggleterm.terminal").Terminal
 
 local root = Terminal:new( {cmd = "root", hidden = true, direction = "float"} )
-function _ROOT()
+function _ROOT_()
     root:toggle()
 end
 

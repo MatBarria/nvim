@@ -5,12 +5,15 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  --'sumneko_lua',
+  'lua_ls',
   'rust_analyzer',
+  'pyright',
+  'ruff',
+  --"black",
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+ --Fix Undefined global 'vim'
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -20,6 +23,15 @@ lsp.configure('sumneko_lua', {
     }
 })
 
+--lsp.lua_ls.setup{
+    --settings = {
+        --Lua = {
+            --diagnostics = {
+                --globals = { 'vim' }
+            --}
+        --}
+    --}
+--}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -29,28 +41,34 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
-
+;
 -- disable completion with tab
 -- this helps with copilot setup
 --cmp_mappings['<Tab>'] = nil
 --cmp_mappings['<S-Tab>'] = nil
 
-lsp.set_preferences({
-    sign_icons = {}
-})
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
+lsp.set_preferences({
+    suggest_lsp_servers = false,
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
+    }
+})
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  --if client.name == "eslint" then
-      --vim.cmd.LspStop('eslint')
-      --return
-  --end
+  if client.name == "eslint" then
+      vim.cmd.LspStop('eslint')
+      return
+  end
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -65,8 +83,24 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-
 vim.diagnostic.config({
+    --virtual_text = false,
     virtual_text = true,
+    virtual_line = false,
+    underline = false,
+    signs = false,
 })
+
+--vim.diagnostic.config({
+    --virtual_text = true,
+    --virtual_line = true,
+    --underline = true,
+    --signs = true,
+--})
+
+local lspconfig = require('lspconfig')
+lspconfig.pyright.setup({
+    filetypes = {'python'},
+})
+
 

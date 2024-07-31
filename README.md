@@ -17,10 +17,11 @@ This enable the word search in all the file
 
 
 ## Clone
-Clone this repo in .config directory
+Clone this repo in ~/.config directory
 
 ## Install plugin
 
-Open neovim and run :PackerSync
-
+Open ~/.config/nvim/lua/ThePrimeagen/packer.lua with neovim.
+Then run :so and :PackerSync
+Then, just in case, run :TSUpdate
 # nvim
