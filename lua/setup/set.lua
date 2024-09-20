@@ -50,3 +50,11 @@ vim.opt.colorcolumn = "100"
 
 -- Open new windows on the right
 vim.opt.splitright = true
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "High light yanking (copy) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})

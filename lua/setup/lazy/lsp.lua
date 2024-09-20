@@ -51,7 +51,13 @@ return {
 					local lspconfig = require("lspconfig")
 					lspconfig.pyright.setup({
 						settings = {
-							useLibraryCodeForTypes = true,
+							python = {
+								analysis = {
+									autoSearchPaths = true,
+									useLibraryCodeForTypes = false,
+									diagnosticMode = "openFilesOnly",
+								},
+							},
 						},
 					})
 				end,
@@ -126,7 +132,7 @@ return {
 				formatting.clang_format.with({
 					extra_args = { "-style=llvm", "-style={IndentWidth: 4, ColumnLimit: 80}" },
 				}),
-				lack,
+				formatting.black,
 			},
 		})
 
