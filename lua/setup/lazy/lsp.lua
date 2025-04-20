@@ -123,6 +123,7 @@ return {
 				bufnr = bufnr,
 			})
 		end
+
 		null_ls.setup({
 			debug = false,
 			sources = {
@@ -130,7 +131,7 @@ return {
 				formatting.eslint_d,
 				formatting.stylua,
 				formatting.clang_format.with({
-					extra_args = { "-style=llvm", "-style={IndentWidth: 4, ColumnLimit: 80}" },
+					extra_args = { "-style=Google", "-style={IndentWidth: 4, ColumnLimit: 80}" },
 				}),
 				formatting.black,
 			},
