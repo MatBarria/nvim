@@ -1,10 +1,10 @@
 return {
 
     -- Code formater
-    --{
-        --'nvim-lua/plenary.nvim',
-        --name = "plenary"
-    --},
+    {
+        'nvim-lua/plenary.nvim',
+        name = "plenary"
+    },
 
     ---- Surround with a simbol
     {
@@ -15,7 +15,7 @@ return {
             require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
             })
-        end
+        end,
     },
 
     ---- Prettier bottom line

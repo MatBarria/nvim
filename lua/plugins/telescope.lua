@@ -2,10 +2,11 @@ return {
 	---- File searcher
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
+		--"nvim-lua/plenary.nvim",
+        "plenary"
 	},
 
-	tag = "0.1.5",
+	--tag = "0.1.5",
 
 	-- Opend the buffers
 	vim.keymap.set("n", "<leader>b", function()
