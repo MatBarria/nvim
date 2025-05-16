@@ -18,14 +18,6 @@ return {
         end,
     },
 
-    ---- Add annotations to the code
-    {
-        "danymat/neogen",
-        config = true,
-        -- Uncomment next line if you want to follow only stable versions
-        -- version = "*"
-    },
-    ---- Prettier bottom line
     ---- Comment line shortcut
     'scrooloose/nerdcommenter',
 
