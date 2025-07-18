@@ -6,7 +6,15 @@ return {
         name = "plenary"
     },
 
-    ---- Surround with a simbol
+    -- Force you to be efficient
+    {
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {},
+    },
+
+    -- Surround with a simbol
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -36,4 +44,18 @@ return {
     ---- Use * to select the word in all the file
     --'nelstrom/vim-visual-star-search',
 
+    -- Markdown preview
+    -- install with yarn or npm
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
+
+    -- Undo tree
+    "mbbill/undotree",
 }

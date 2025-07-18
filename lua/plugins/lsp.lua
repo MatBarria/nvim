@@ -29,7 +29,7 @@ return {
                 "pyright",
                 --"autopep8",
                 "clangd",
-                "remark_ls",
+                --"remark_ls",
             },
             handlers = {
                 --require('lspconfig').pyright.setup({}),
@@ -54,21 +54,21 @@ return {
         })
 
         --vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-            --pattern = "*.py",
-            --callback = function()
-                --local lspconfig = require("lspconfig")
-                --lspconfig.pyright.setup({
-                    --settings = {
-                        --python = {
-                            --analysis = {
-                                --autoSearchPaths = true,
-                                --useLibraryCodeForTypes = false,
-                                --diagnosticMode = "openFilesOnly",
-                            --},
-                        --},
-                    --},
-                --})
-            --end
+        --pattern = "*.py",
+        --callback = function()
+        --local lspconfig = require("lspconfig")
+        --lspconfig.pyright.setup({
+        --settings = {
+        --python = {
+        --analysis = {
+        --autoSearchPaths = true,
+        --useLibraryCodeForTypes = false,
+        --diagnosticMode = "openFilesOnly",
+        --},
+        --},
+        --},
+        --})
+        --end
         --})
 
 

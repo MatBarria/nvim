@@ -14,7 +14,7 @@ return {
                     background = "dark"
                 end
                 vim.opt.background = background -- set this to dark or light
-                vim.cmd("colorscheme catppuccin")
+                vim.cmd("colorscheme catppuccin-mocha")
             end)
         end,
     },

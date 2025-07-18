@@ -9,6 +9,7 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Encoding?
 vim.opt.encoding = "utf-8"
+--vim.opt.term= "screen-256color"
 
 -- Index Size
 vim.opt.tabstop = 4

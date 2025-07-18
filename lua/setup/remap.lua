@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-
 -- Set leader key
 vim.g.mapleader = " "
 
@@ -12,6 +11,8 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w, opts)
 -- add , or ; at the end of the line
 vim.keymap.set("n", "<leader>;", "A;<ESC>", opts)
 vim.keymap.set("n", "<leader>,", "A,<ESC>", opts)
+vim.keymap.set("n", "<leader>:", "A:<ESC>", opts)
+
 
 -- Move text up and Down
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
@@ -43,3 +44,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>Znzzzv", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
+
+-- Open undoTree
+vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
