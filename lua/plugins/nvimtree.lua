@@ -11,7 +11,13 @@ return {
             local api = require("nvim-tree.api")
 
             local function opts(desc)
-                return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+                return {
+                    desc = "nvim-tree: " .. desc,
+                    buffer = bufnr,
+                    noremap = true,
+                    silent = true,
+                    nowait = true,
+                }
             end
 
             -- default mappings
@@ -20,6 +26,7 @@ return {
             -- custom mappings
             vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split"))
         end
+
         require("nvim-tree").setup({
             actions = {
                 open_file = {
@@ -28,9 +35,7 @@ return {
             },
             on_attach = nvim_tree_on_attach,
         })
-    end,
 
-    vim.keymap.set("n", "<leader>nt", function()
-        vim.cmd("NvimTreeToggle")
-    end),
+        vim.keymap.set("n", "<leader>nt", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+    end,
 }

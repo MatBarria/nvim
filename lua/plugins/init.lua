@@ -7,12 +7,12 @@ return {
     },
 
     -- Force you to be efficient
-    {
-        "m4xshen/hardtime.nvim",
-        lazy = false,
-        dependencies = { "MunifTanjim/nui.nvim" },
-        opts = {},
-    },
+    --{
+        --"m4xshen/hardtime.nvim",
+        --lazy = false,
+        --dependencies = { "MunifTanjim/nui.nvim" },
+        --opts = {},
+    --},
 
     -- Surround with a simbol
     {
