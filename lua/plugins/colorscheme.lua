@@ -2,20 +2,25 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        --vim.cmd.colorscheme "catppuccin-latte"
+
         config = function()
-            vim.cmd("colorscheme catppuccin-mocha")
-            --Set light colorscheme
             local background = "dark"
+
+            vim.cmd.colorscheme("catppuccin-mocha")
+
             vim.keymap.set("n", "<S-q>", function()
                 if background == "dark" then
                     background = "light"
-                elseif background == "light" then
+                    vim.opt.background = "light"
+                    vim.cmd.colorscheme("catppuccin-latte")
+                else
                     background = "dark"
+                    vim.opt.background = "dark"
+                    vim.cmd.colorscheme("catppuccin-mocha")
                 end
-                vim.opt.background = background -- set this to dark or light
-                vim.cmd("colorscheme catppuccin-mocha")
-            end)
+            end, {
+                desc = "Toggle Catppuccin light/dark theme",
+            })
         end,
     },
 
@@ -54,5 +59,6 @@ return {
     --end,
 
     --},
+
 
 }

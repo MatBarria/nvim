@@ -124,16 +124,10 @@ return {
 		---@type table<string, vim.lsp.Config>
 		local servers = {
 			clangd = {},
-			-- gopls = {},
 			pyright = {},
-			-- rust_analyzer = {},
-			--
-			-- Some languages (like typescript) have entire language plugins that can be useful:
-			--    https://github.com/pmizio/typescript-tools.nvim
-			--
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
 			-- ts_ls = {},
-
+			bashls = {},
 			stylua = {}, -- Used to format Lua code
 
 			-- Special Lua Config, as recommended by neovim help docs
@@ -194,5 +188,21 @@ return {
 			vim.lsp.config(name, server)
 			vim.lsp.enable(name)
 		end
+
+		vim.diagnostic.config({
+			update_in_insert = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+			virtual_text = false,
+			virtual_line = false,
+			underline = false,
+			signs = true,
+		})
 	end,
 }

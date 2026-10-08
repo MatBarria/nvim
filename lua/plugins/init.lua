@@ -1,6 +1,6 @@
 return {
 
-	-- Code formater
+-- Code formater
 	{
 		"nvim-lua/plenary.nvim",
 		name = "plenary",
@@ -53,6 +53,16 @@ return {
 	--ft = { "markdown" },
 	--},
 
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		--dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
+	},
+
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		---@module 'gitsigns'
@@ -70,20 +80,33 @@ return {
 	},
 
 	-- Undo tree
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
-		"lewis6991/gitsigns.nvim",
-		---@module 'gitsigns'
-		---@type Gitsigns.Config
-		---@diagnostic disable-next-line: missing-fields
-		opts = {
-			signs = {
-				add = { text = "+" }, ---@diagnostic disable-line: missing-fields
-				change = { text = "~" }, ---@diagnostic disable-line: missing-fields
-				delete = { text = "_" }, ---@diagnostic disable-line: missing-fields
-				topdelete = { text = "‾" }, ---@diagnostic disable-line: missing-fields
-				changedelete = { text = "~" }, ---@diagnostic disable-line: missing-fields
-			},
-		},
-	},
 	"mbbill/undotree",
+    {
+      "ellisonleao/carbon-now.nvim",
+      lazy = true,
+      cmd = "CarbonNow",
+      ---@param opts cn.ConfigSchema
+      opts = {
+        base_url = "https://carbon.now.sh/",
+          options = {
+            bg = "gray",
+            drop_shadow_blur = "68px",
+            drop_shadow = false,
+            drop_shadow_offset_y = "20px",
+            font_family = "Hack",
+            font_size = "18px",
+            line_height = "133%",
+            line_numbers = true,
+            theme = "catppuccin-mocha",
+            titlebar = "Made with carbon-now.nvim",
+            watermark = false,
+            width = "680",
+            window_theme = "sharp",
+            padding_horizontal = "0px",
+            padding_vertical = "0px",
+          },
+
+        }
+    }
+
 }
